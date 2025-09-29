@@ -43,11 +43,6 @@ func handleInitClash(paramsString string) bool {
 	version = params.Version
 	if !isInit {
 		constant.SetHomeDir(params.HomeDir)
-		//currentConfig, _ = config.ParseRawConfig(config.DefaultRawConfig())
-		//startTime := time.Now()
-		//hub.ApplyConfig(currentConfig)
-		//elapsedTime := time.Since(startTime) / time.Millisecond
-		//log.Infoln("Initial clash env, total time: %dms", elapsedTime)
 		isInit = true
 	}
 	return isInit
