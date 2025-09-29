@@ -33,13 +33,13 @@ Future<void> _service(List<String> flags) async {
       },
     ),
   );
+  app?.tip(appLocalizations.startVpn);
+  final version = await system.version;
+  await coreController.init(version);
+  final clashConfig = globalState.config.patchClashConfig.copyWith.tun(
+    enable: false,
+  );
   Future(() async {
-    app?.tip(appLocalizations.startVpn);
-    final version = await system.version;
-    await coreController.init(version);
-    final clashConfig = globalState.config.patchClashConfig.copyWith.tun(
-      enable: false,
-    );
     await coreController.setupConfig(clashConfig);
     await globalState.handleStart();
   });
