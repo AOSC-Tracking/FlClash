@@ -379,9 +379,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterScriptName": MessageLookupByLibrary.simpleMessage(
       "スクリプト名を入力してください",
     ),
-    "pleaseInputAdminPassword": MessageLookupByLibrary.simpleMessage(
-      "管理者パスワードを入力",
-    ),
     "pleaseUploadFile": MessageLookupByLibrary.simpleMessage(
       "ファイルをアップロードしてください",
     ),
