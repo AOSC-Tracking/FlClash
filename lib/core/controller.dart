@@ -50,9 +50,10 @@ class CoreController {
         if (isExists) {
           continue;
         }
-        final data = await rootBundle.load('assets/data/$geoFileName');
-        List<int> bytes = data.buffer.asUint8List();
-        await geoFile.writeAsBytes(bytes, flush: true);
+        final data = await File(
+          '/usr/share/mihomo-rules-dat/$geoFileName',
+        ).readAsBytes();
+        await geoFile.writeAsBytes(data, flush: true);
       }
     } catch (e) {
       exit(0);
