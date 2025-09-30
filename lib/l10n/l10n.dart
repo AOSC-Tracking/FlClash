@@ -2479,16 +2479,6 @@ class AppLocalizations {
     );
   }
 
-  /// `Please enter the admin password`
-  String get pleaseInputAdminPassword {
-    return Intl.message(
-      'Please enter the admin password',
-      name: 'pleaseInputAdminPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Copying environment variables`
   String get copyEnvVar {
     return Intl.message(
