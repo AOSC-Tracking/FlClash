@@ -499,9 +499,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterScriptName": MessageLookupByLibrary.simpleMessage(
       "Please enter a script name",
     ),
-    "pleaseInputAdminPassword": MessageLookupByLibrary.simpleMessage(
-      "Please enter the admin password",
-    ),
     "pleaseUploadFile": MessageLookupByLibrary.simpleMessage(
       "Please upload file",
     ),
