@@ -24,26 +24,11 @@ class Contributor {
 class AboutView extends StatelessWidget {
   const AboutView({super.key});
 
-  Future<void> _checkUpdate(BuildContext context) async {
-    final data = await globalState.appController.safeRun<Map<String, dynamic>?>(
-      request.checkForUpdate,
-      title: appLocalizations.checkUpdate,
-      needLoading: true,
-    );
-    globalState.appController.checkUpdateResultHandle(data: data, isUser: true);
-  }
-
   List<Widget> _buildMoreSection(BuildContext context) {
     return generateSection(
       separated: false,
       title: appLocalizations.more,
       items: [
-        ListItem(
-          title: Text(appLocalizations.checkUpdate),
-          onTap: () {
-            _checkUpdate(context);
-          },
-        ),
         ListItem(
           title: const Text('Telegram'),
           onTap: () {

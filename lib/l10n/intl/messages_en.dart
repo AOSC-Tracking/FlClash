@@ -136,12 +136,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Modify application related settings",
     ),
     "auto": MessageLookupByLibrary.simpleMessage("Auto"),
-    "autoCheckUpdate": MessageLookupByLibrary.simpleMessage(
-      "Auto check updates",
-    ),
-    "autoCheckUpdateDesc": MessageLookupByLibrary.simpleMessage(
-      "Auto check for updates when the app starts",
-    ),
     "autoCloseConnections": MessageLookupByLibrary.simpleMessage(
       "Auto close connections",
     ),
@@ -192,10 +186,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Cancel select all",
     ),
     "checkError": MessageLookupByLibrary.simpleMessage("Check error"),
-    "checkUpdate": MessageLookupByLibrary.simpleMessage("Check for updates"),
-    "checkUpdateError": MessageLookupByLibrary.simpleMessage(
-      "The current application is already the latest version",
-    ),
     "checking": MessageLookupByLibrary.simpleMessage("Checking..."),
     "clearData": MessageLookupByLibrary.simpleMessage("Clear Data"),
     "clipboardExport": MessageLookupByLibrary.simpleMessage("Export clipboard"),
@@ -296,12 +286,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "This software is only used for non-commercial purposes such as learning exchanges and scientific research. It is strictly prohibited to use this software for commercial purposes. Any commercial activity, if any, has nothing to do with this software.",
     ),
     "disconnected": MessageLookupByLibrary.simpleMessage("Disconnected"),
-    "discoverNewVersion": MessageLookupByLibrary.simpleMessage(
-      "Discover the new version",
-    ),
-    "discovery": MessageLookupByLibrary.simpleMessage(
-      "Discovery a new version",
-    ),
     "dnsDesc": MessageLookupByLibrary.simpleMessage(
       "Update DNS related settings",
     ),
@@ -387,7 +371,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "global": MessageLookupByLibrary.simpleMessage("Global"),
     "go": MessageLookupByLibrary.simpleMessage("Go"),
-    "goDownload": MessageLookupByLibrary.simpleMessage("Go to download"),
     "goToConfigureScript": MessageLookupByLibrary.simpleMessage(
       "Go to configure script",
     ),
