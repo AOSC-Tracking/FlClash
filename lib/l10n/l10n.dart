@@ -404,26 +404,6 @@ class AppLocalizations {
     );
   }
 
-  /// `Auto check updates`
-  String get autoCheckUpdate {
-    return Intl.message(
-      'Auto check updates',
-      name: 'autoCheckUpdate',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Auto check for updates when the app starts`
-  String get autoCheckUpdateDesc {
-    return Intl.message(
-      'Auto check for updates when the app starts',
-      name: 'autoCheckUpdateDesc',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `AccessControl`
   String get accessControl {
     return Intl.message(
@@ -954,16 +934,6 @@ class AppLocalizations {
     return Intl.message('Stopping VPN...', name: 'stopVpn', desc: '', args: []);
   }
 
-  /// `Discovery a new version`
-  String get discovery {
-    return Intl.message(
-      'Discovery a new version',
-      name: 'discovery',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Compatibility mode`
   String get compatible {
     return Intl.message(
@@ -1087,46 +1057,6 @@ class AppLocalizations {
   /// `Password`
   String get password {
     return Intl.message('Password', name: 'password', desc: '', args: []);
-  }
-
-  /// `Check for updates`
-  String get checkUpdate {
-    return Intl.message(
-      'Check for updates',
-      name: 'checkUpdate',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Discover the new version`
-  String get discoverNewVersion {
-    return Intl.message(
-      'Discover the new version',
-      name: 'discoverNewVersion',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `The current application is already the latest version`
-  String get checkUpdateError {
-    return Intl.message(
-      'The current application is already the latest version',
-      name: 'checkUpdateError',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Go to download`
-  String get goDownload {
-    return Intl.message(
-      'Go to download',
-      name: 'goDownload',
-      desc: '',
-      args: [],
-    );
   }
 
   /// `Unknown`
@@ -2399,16 +2329,6 @@ class AppLocalizations {
     return Intl.message(
       'Config listen route address',
       name: 'routeAddressDesc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter the admin password`
-  String get pleaseInputAdminPassword {
-    return Intl.message(
-      'Please enter the admin password',
-      name: 'pleaseInputAdminPassword',
       desc: '',
       args: [],
     );
