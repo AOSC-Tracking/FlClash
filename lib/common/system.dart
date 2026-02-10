@@ -6,8 +6,6 @@ import 'package:ffi/ffi.dart';
 import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/plugins/app.dart';
-import 'package:fl_clash/state.dart';
-import 'package:fl_clash/widgets/input.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 
@@ -54,10 +52,13 @@ class System {
       }
       return false;
     } else if (Platform.isLinux) {
-      final result = await Process.run('stat', ['-c', '%U:%G %A', corePath]);
-      final output = result.stdout.trim();
-      if (output.startsWith('root:') && output.contains('rws')) {
-        return true;
+      final result = await Process.run('getcap', [corePath]);
+      if (result.exitCode == 0) {
+        final output = result.stdout.toString().trim();
+        if (output.contains('cap_net_admin') &&
+            output.contains('cap_net_bind_service')) {
+          return true;
+        }
       }
       return false;
     }
@@ -94,23 +95,21 @@ class System {
       }
       return AuthorizeCode.success;
     } else if (Platform.isLinux) {
-      final shell = Platform.environment['SHELL'] ?? 'bash';
-      final password = await globalState.showCommonDialog<String>(
-        child: InputDialog(
-          obscureText: true,
-          title: appLocalizations.pleaseInputAdminPassword,
-          value: '',
-        ),
-      );
-      final arguments = [
-        '-c',
-        'echo "$password" | sudo -S chown root:root "$corePath" && echo "$password" | sudo -S chmod +sx "$corePath"',
-      ];
-      final result = await Process.run(shell, arguments);
-      if (result.exitCode != 0) {
+      try {
+        final result = await Process.run('pkexec', [
+          'setcap',
+          'cap_net_admin,cap_net_bind_service=ep',
+          corePath,
+        ]);
+
+        if (result.exitCode != 0) {
+          return AuthorizeCode.error;
+        }
+
+        return AuthorizeCode.success;
+      } catch (e) {
         return AuthorizeCode.error;
       }
-      return AuthorizeCode.success;
     }
     return AuthorizeCode.error;
   }
